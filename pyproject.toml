@@ -11,3 +11,11 @@ dependencies = [
     "langchain-anthropic>=1.7.5",
     "python-dotenv>=1.2.3",
 ]
+
+# This creates the `operator-loop` command.
+[project.scripts]
+operator-loop = "operator_loop.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

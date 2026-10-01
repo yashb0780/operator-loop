@@ -67,11 +67,19 @@ During review, each escalated or wrong case gets one label:
 
 ## Results
 
-Baseline coverage with playbook v1: _coming in Phase 2._
+All numbers come from real runs of the agent (`claude-sonnet-5-5`, via LangGraph) on the 20 synthetic cases, recorded as LangSmith experiments.
+
+| Playbook | Covered | Escalated | Wrong | Executable coverage |
+|---|---|---|---|---|
+| v1 (baseline) | 13/20 | 7 | 0 | **65%** |
+
+With playbook v1, the agent escalated exactly the 7 cases that depend on the three uncovered patterns (3 DPA, 2 BAA, 2 PMO) instead of guessing, made no wrong decisions, and handled every look-alike case correctly. For example, on an EU case with an unsigned DPA it explained that "the playbook does not say whether an unsigned DPA should block or delay kickoff."
+
+This is a single run. Model outputs can vary slightly between runs, so small differences are possible if you reproduce it. Before and after numbers for the full loop: coming in Phase 4.
 
 ## Commands
 
-One command with subcommands (coming in Phases 2 and 3):
+One command with subcommands. `run` works today; the rest arrive in Phase 3.
 
 | Command | What it does |
 |---|---|
@@ -91,7 +99,14 @@ git clone https://github.com/yashb0780/operator-loop.git
 cd operator-loop
 cp .env.example .env    # then open .env and paste in your keys
 uv sync                 # installs the dependencies
+uv run operator-loop run
 ```
+
+`run` creates a LangSmith dataset called `operator-loop-handoffs` (first time only), runs the agent on every case as an experiment, prints a table, and saves the details to `results/`. Every agent call is traced in your LangSmith project.
+
+## How the agent works
+
+[`operator_loop/agent.py`](operator_loop/agent.py) is a one-step LangGraph graph. It gives Claude the playbook and one handoff record and asks for JSON: `decision`, `reason`, and `escalate`. The agent is told to follow only what the playbook says. When the playbook does not clearly cover a case, it sets `escalate` to true and explains what is missing, instead of guessing. Choosing `escalate_to_csm_lead` is a normal playbook decision and does not count as an escalation.
 
 ## What's next
 

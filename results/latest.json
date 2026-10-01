@@ -1,0 +1,235 @@
+{
+  "summary": {
+    "timestamp": "2026-10-01T14:48:50+00:00",
+    "playbook_version": "v1",
+    "experiment_name": "playbook-v1-97554d28",
+    "experiment_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/datasets/b757cda6-d4af-4daa-a622-86e4011d7570/compare?selectedSessions=a423d145-52fa-41f6-a0ec-246401eb4134",
+    "covered": 13,
+    "escalated": 7,
+    "wrong": 0,
+    "total": 20,
+    "coverage": 0.65
+  },
+  "cases": [
+    {
+      "case_id": "HO-001",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Dana Whitfield), so rule 1 applies. The compliance documents are not requested, so nothing in the handoff falls outside the playbook.",
+      "covered": true,
+      "run_id": "01a0f7f0-504e-78e1-9bee-4bbae95c317c",
+      "example_id": "390e27a8-ee77-46ca-ad8b-e2d80bfb8e98",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-504e-78e1-9bee-4bbae95c317c?poll=true"
+    },
+    {
+      "case_id": "HO-002",
+      "expected_decision": "hold_for_dpa",
+      "decision": "needs_operator",
+      "escalate": true,
+      "reason": "The contract is countersigned and Jonas Albrecht is a named champion, so Rule 1 would normally mean schedule_kickoff. However, the data processing agreement for this German customer is still unsigned, and the playbook does not say whether an unsigned DPA should block or delay kickoff.",
+      "covered": false,
+      "run_id": "01a0f7f0-3f4f-7192-82d6-3e68e80aa8f1",
+      "example_id": "1360fd37-1c6d-4fe8-9f9e-65ffa818bf6a",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-3f4f-7192-82d6-3e68e80aa8f1?poll=true"
+    },
+    {
+      "case_id": "HO-003",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Priya Raman), so Rule 1 applies. The compliance document fields are marked not_requested, so nothing in the handoff changes the next step.",
+      "covered": true,
+      "run_id": "01a0f7f0-5aef-7e73-816c-791d790926fb",
+      "example_id": "6e2249c0-4b8a-46bd-adb8-fabe70ac1a01",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-5aef-7e73-816c-791d790926fb?poll=true"
+    },
+    {
+      "case_id": "HO-004",
+      "expected_decision": "hold_for_baa",
+      "decision": "needs_operator",
+      "escalate": true,
+      "reason": "Contract is countersigned and a champion is named, which would normally mean schedule_kickoff. But the account will send patient appointment data and the BAA is not started, and the playbook says nothing about compliance documents, so I can't tell whether that should delay the kickoff.",
+      "covered": false,
+      "run_id": "01a0f7f0-4846-7fa1-a56c-da63addb6e0f",
+      "example_id": "28d86d45-7be8-4b0a-873e-c89a987fdd2e",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-4846-7fa1-a56c-da63addb6e0f?poll=true"
+    },
+    {
+      "case_id": "HO-005",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Ellie Hart), so Rule 1 applies. The time zone note and the compliance documents (not requested) do not change the next step under the playbook.",
+      "covered": true,
+      "run_id": "01a0f7f0-633a-7221-857b-68c3e193bf6a",
+      "example_id": "975fbe28-251e-41e9-92fb-2e782b4e585a",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-633a-7221-857b-68c3e193bf6a?poll=true"
+    },
+    {
+      "case_id": "HO-006",
+      "expected_decision": "skip_kickoff_customer_pmo",
+      "decision": "needs_operator",
+      "escalate": true,
+      "reason": "The contract is countersigned and a champion is named, so Rule 1 would normally mean schedule_kickoff. However, the customer's PMO wants to run the kickoff with its own template and asked for our project plan instead of a meeting, and the playbook only covers booking a kickoff call, not a customer-led kickoff.",
+      "covered": false,
+      "run_id": "01a0f7f0-5f29-7070-964a-bf0839e52ce7",
+      "example_id": "8332ca7b-89b7-4486-8b4d-20d6302b97f6",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-5f29-7070-964a-bf0839e52ce7?poll=true"
+    },
+    {
+      "case_id": "HO-007",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and Katrin Vogel is a named champion, so Rule 1 applies. The signed DPA and the German HQ do not conflict with the playbook rules.",
+      "covered": true,
+      "run_id": "01a0f7f0-3f4e-7952-98de-5db47531e9df",
+      "example_id": "11a0b9df-2599-4d2b-a2de-382423ea5bbe",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-3f4e-7952-98de-5db47531e9df?poll=true"
+    },
+    {
+      "case_id": "HO-008",
+      "expected_decision": "escalate_to_csm_lead",
+      "decision": "escalate_to_csm_lead",
+      "escalate": false,
+      "reason": "The contract is awaiting our countersignature, so rule 2 applies and the deal is not ready for onboarding, even though a named champion (Tom Barrera) exists.",
+      "covered": true,
+      "run_id": "01a0f7f0-3f4c-75e2-9361-e0eea6151ab2",
+      "example_id": "00e43be1-eb56-4754-bab5-16bbb38c415e",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-3f4c-75e2-9361-e0eea6151ab2?poll=true"
+    },
+    {
+      "case_id": "HO-009",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Alicia Moreno), so Rule 1 applies. The BAA and DPA details are not mentioned in the playbook and do not change the outcome under its rules.",
+      "covered": true,
+      "run_id": "01a0f7f0-6f72-7c30-8203-f4f1db98c5ee",
+      "example_id": "ce6de281-7452-4a4b-bfe9-2604bf074d8a",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-6f72-7c30-8203-f4f1db98c5ee?poll=true"
+    },
+    {
+      "case_id": "HO-010",
+      "expected_decision": "hold_for_dpa",
+      "decision": "needs_operator",
+      "escalate": true,
+      "reason": "The contract is countersigned and Camille Durand is a named champion, so rule 1 would point to schedule_kickoff. However, the customer requested a data processing agreement that has not been started, and the playbook does not say whether an outstanding DPA affects kickoff scheduling.",
+      "covered": false,
+      "run_id": "01a0f7f0-5b3e-7683-8d8d-df1aeed197b8",
+      "example_id": "7b0304b8-076b-4fc4-b01a-0cf8412a8f4a",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-5b3e-7683-8d8d-df1aeed197b8?poll=true"
+    },
+    {
+      "case_id": "HO-011",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Ben Okafor, Program Director), so Rule 1 applies. The compliance document fields show 'not_requested', so nothing in the handoff conflicts with the playbook.",
+      "covered": true,
+      "run_id": "01a0f7f0-70c1-7a93-b7ad-bc58b2de3a1f",
+      "example_id": "e3b1a3d0-c5cc-495e-895a-c4d2305797ef",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-70c1-7a93-b7ad-bc58b2de3a1f?poll=true"
+    },
+    {
+      "case_id": "HO-012",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Gloria Trent, VP of Plant Operations), so rule 1 applies. The notes about no PMO and compliance documents not being requested do not change the playbook outcome.",
+      "covered": true,
+      "run_id": "01a0f7f0-3f4e-79e3-88f9-4f818030357f",
+      "example_id": "052af8c7-b543-4111-9e63-1899be32a4a2",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-3f4e-79e3-88f9-4f818030357f?poll=true"
+    },
+    {
+      "case_id": "HO-013",
+      "expected_decision": "hold_for_baa",
+      "decision": "needs_operator",
+      "escalate": true,
+      "reason": "The contract is countersigned and a champion is named, which would normally mean schedule_kickoff, but the BAA is still awaiting signature for a healthcare customer. The playbook says nothing about compliance documents like a BAA, so I can't tell whether that should hold up the kickoff.",
+      "covered": false,
+      "run_id": "01a0f7f0-4ecf-79a0-89dc-35ec3bad9bbe",
+      "example_id": "2d9363b1-4894-4230-a1c9-6de36af50b58",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-4ecf-79a0-89dc-35ec3bad9bbe?poll=true"
+    },
+    {
+      "case_id": "HO-014",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Sanne de Wit, Studio Manager), so Rule 1 applies. The signed DPA and other fields don't conflict with the playbook rules.",
+      "covered": true,
+      "run_id": "01a0f7f0-4820-7412-8a7d-7b1b02f0b71d",
+      "example_id": "18ce4522-837d-42d1-ab84-1c2e6ff10cb6",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-4820-7412-8a7d-7b1b02f0b71d?poll=true"
+    },
+    {
+      "case_id": "HO-015",
+      "expected_decision": "skip_kickoff_customer_pmo",
+      "decision": "needs_operator",
+      "escalate": true,
+      "reason": "Contract is countersigned and a champion is named, which would normally mean schedule_kickoff, but the sales notes say the customer's PMO will schedule and run the kickoff themselves. The playbook only covers CS booking the call within 5 business days and does not address a customer-run kickoff.",
+      "covered": false,
+      "run_id": "01a0f7f0-6368-79f1-8c2c-d8070d985654",
+      "example_id": "b8233d77-f80f-4246-ad1d-84c1accf495f",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-6368-79f1-8c2c-d8070d985654?poll=true"
+    },
+    {
+      "case_id": "HO-016",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Rafael Costa, IT Manager), so Rule 1 applies. The compliance document fields show 'not_requested', and the playbook sets no condition on them, so they do not change the next step.",
+      "covered": true,
+      "run_id": "01a0f7f0-6d46-73a1-abe2-56e4bafa038b",
+      "example_id": "b827112e-b3bd-4bf8-a9c7-7c0f8866bf55",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-6d46-73a1-abe2-56e4bafa038b?poll=true"
+    },
+    {
+      "case_id": "HO-017",
+      "expected_decision": "hold_for_dpa",
+      "decision": "needs_operator",
+      "escalate": true,
+      "reason": "The contract is countersigned and Aoife Brennan is a named champion, so Rule 1 would normally apply. However, the DPA is still in legal review, and the playbook does not say whether an unresolved DPA should delay or change the kickoff, so a human operator needs to decide.",
+      "covered": false,
+      "run_id": "01a0f7f0-5405-7061-9499-513f871895d9",
+      "example_id": "55823501-272c-4439-91e7-edf08d85c120",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-5405-7061-9499-513f871895d9?poll=true"
+    },
+    {
+      "case_id": "HO-018",
+      "expected_decision": "escalate_to_csm_lead",
+      "decision": "escalate_to_csm_lead",
+      "escalate": false,
+      "reason": "The contract is countersigned, but the customer has no named champion because the champion left and no replacement has been identified, so rule 3 applies.",
+      "covered": true,
+      "run_id": "01a0f7f0-5238-7302-946a-d6565ddcad86",
+      "example_id": "3aeb7832-004a-467e-a23b-bcdfa2dcb39a",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-5238-7302-946a-d6565ddcad86?poll=true"
+    },
+    {
+      "case_id": "HO-019",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Howard Kim, CIO), so Rule 1 applies. The compliance document fields show 'not_requested', and the playbook does not make them a condition for kickoff.",
+      "covered": true,
+      "run_id": "01a0f7f0-58cf-7de1-8d28-88acf43c3841",
+      "example_id": "61fdabed-70fb-47d8-9f20-447abb2a7f5e",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-58cf-7de1-8d28-88acf43c3841?poll=true"
+    },
+    {
+      "case_id": "HO-020",
+      "expected_decision": "schedule_kickoff",
+      "decision": "schedule_kickoff",
+      "escalate": false,
+      "reason": "The contract is countersigned and the customer has a named champion (Lucy Grant, Owner), so Rule 1 applies. The compliance documents are not requested, so nothing in the handoff falls outside the playbook.",
+      "covered": true,
+      "run_id": "01a0f7f0-6298-73f0-8dba-11b6e51df026",
+      "example_id": "975ea76c-af85-49aa-9145-5683c8c01bac",
+      "trace_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/projects/p/a423d145-52fa-41f6-a0ec-246401eb4134/r/01a0f7f0-6298-73f0-8dba-11b6e51df026?poll=true"
+    }
+  ]
+}

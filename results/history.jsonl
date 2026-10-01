@@ -1,0 +1,1 @@
+{"timestamp": "2026-10-01T14:48:50+00:00", "playbook_version": "v1", "experiment_name": "playbook-v1-97554d28", "experiment_url": "https://smith.langchain.com/o/73e86ecf-e6cc-4c88-ac87-1400ade7525a/datasets/b757cda6-d4af-4daa-a622-86e4011d7570/compare?selectedSessions=a423d145-52fa-41f6-a0ec-246401eb4134", "covered": 13, "escalated": 7, "wrong": 0, "total": 20, "coverage": 0.65}
