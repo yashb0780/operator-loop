@@ -1,0 +1,14 @@
+# Secrets: your real API keys live here. Never commit this file.
+.env
+.env.*
+!.env.example
+
+# Python virtual environment and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Mac and editor clutter
+.DS_Store
+.idea/
+.vscode/

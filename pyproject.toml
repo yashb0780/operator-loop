@@ -1,0 +1,13 @@
+[project]
+name = "operator-loop"
+version = "0.1.0"
+description = "A lightweight loop that lets operators teach AI agents how their business runs, built on LangSmith and LangGraph."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "langsmith>=0.14.2",
+    "langgraph>=1.2.12",
+    "langchain-anthropic>=1.7.5",
+    "python-dotenv>=1.2.3",
+]
